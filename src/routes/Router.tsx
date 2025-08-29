@@ -1,12 +1,17 @@
 import React from "react";
-import { BrowserRouter, Routes } from "react-router-dom";
-import StudioRouter from "./StudioRouter";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { GlobalLayout } from "../layouts";
+import { Dashboard, Home, Studio } from "../pages";
 
 const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <StudioRouter />
+        <Route path="/" Component={GlobalLayout}>
+          <Route path="" Component={Home} />
+          <Route path="dashboard" Component={Dashboard} />
+          <Route path="studio" Component={Studio} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
