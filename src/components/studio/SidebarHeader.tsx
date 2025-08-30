@@ -14,7 +14,7 @@ const icons = [
 
 const SidebarHeader: React.FC<SidebarHeaderPropsInterface> = ({
   selectedPanelIndex,
-  handleIconButtonClick,
+  handleSelectPanelIndex,
 }) => {
   return (
     <section className="flex items-center w-full gap-3 px-2 h-[40px] border-b border-border-primary justify-around">
@@ -26,7 +26,7 @@ const SidebarHeader: React.FC<SidebarHeaderPropsInterface> = ({
           className={`mt-[1px] cursor-pointer transition-all ease-in-out duration-200 hover:text-accent ${
             selectedPanelIndex == index ? "text-accent" : "text-text-secondary"
           }`}
-          onClick={() => handleIconButtonClick(index)}
+          onClick={() => handleSelectPanelIndex(index)}
         />
       ))}
     </section>
