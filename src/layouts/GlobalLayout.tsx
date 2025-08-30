@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Header } from "../components";
+import { Footer, Header } from "../components";
 
 const GlobalLayout: React.FC = () => {
   return (
@@ -9,6 +9,7 @@ const GlobalLayout: React.FC = () => {
       <section className="h-full flex">
         <Outlet />
       </section>
+      <Footer />
     </section>
   );
 };

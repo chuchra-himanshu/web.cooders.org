@@ -14,14 +14,13 @@ const StudioLibraries: React.FC<StudioLibrariesPropsInterface> = ({
   return (
     <SidebarPanelWrapper>
       <div className="flex items-center justify-between flex-wrap">
-        {[...STUDIO_DATA.LIBRARIES, ...STUDIO_DATA.LIBRARIES]
-          .filter((lib) => lib.visibility)
-          .map((lib, index) => {
+        {STUDIO_DATA.LIBRARIES.filter((lib) => lib.visibility).map(
+          (lib, index) => {
             const IconComponent = getIcon(lib.logo);
             return (
               <div
                 key={index}
-                className={`w-[98px] mb-[8px] h-[80px] rounded-[10px] cursor-pointer transition-all ease-in-out duration-200 hover:bg-accent/5 hover:text-accent flex flex-col items-center justify-center gap-[6px] ${
+                className={`w-[98px] mb-[7px] h-[80px] rounded-[10px] cursor-pointer transition-all ease-in-out duration-200 hover:bg-accent/5 hover:text-accent flex flex-col items-center justify-center gap-[6px] ${
                   selectedLibraryTitle == lib.title
                     ? "bg-accent/5 text-accent"
                     : "text-text-secondary bg-overlay-primary"
@@ -32,7 +31,8 @@ const StudioLibraries: React.FC<StudioLibrariesPropsInterface> = ({
                 <p className="text-[13px] font-medium">{lib.title}</p>
               </div>
             );
-          })}
+          }
+        )}
       </div>
     </SidebarPanelWrapper>
   );
